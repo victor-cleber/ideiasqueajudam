@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import Drawer from '@material-ui/core/Drawer'
 import IconButton from '@material-ui/core/IconButton'
 import MenuIcon from '@material-ui/icons/Menu'
-import Routes from '../../routes'
+import Routes, { headerRoutes } from '../routes/routes'
 
 const useStyles = makeStyles( theme => ({
   list: {
@@ -32,17 +32,18 @@ const SideMenu = () => {
     isOpen(open)
   }
 
-  const list = (anchor) => (
-    <div
+  const list = () => {
+    return <div
       role="presentation"
       onClick={toggleSideMenu(false)}
       onKeyDown={toggleSideMenu(false)}
     >
       <Routes
+        routes={headerRoutes}
         textColor='black'
-        isVertical />
+        isVertical/>
     </div>
-  )
+  }
 
   return (
     <>

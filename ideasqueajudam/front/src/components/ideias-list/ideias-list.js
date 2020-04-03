@@ -3,15 +3,20 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid'
 import IdeaItem from './ideia-item'
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   container: {
-    margin: '0 auto'
+    display: 'flex',
+    justifyContent: 'space-between'
   },
   containerItem: {
     display: 'flex',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    marginBottom: 15,
+    [theme.breakpoints.up('md')]: {
+      maxWidth: 300
+    }
   }
-})
+}))
 
 const IdeiasList = () => {
   const classes = useStyles()
@@ -32,7 +37,7 @@ const IdeiasList = () => {
     )
   }
   return (
-    <Grid className={classes.container} container spacing={3}>
+    <Grid className={classes.container} container>
       <Row />
       <Row />
       <Row />

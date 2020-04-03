@@ -3,6 +3,7 @@ import Carousel from '../carousel/carousel'
 import Dropdown from '../dropdown/dropdown'
 import IdeiasList from '../ideias-list/ideias-list'
 import Content from '../containers/content'
+import Footer from '../footer/footer'
 
 const Home = () => {
   const temporaryOptions = [
@@ -32,6 +33,7 @@ const Home = () => {
         />
         <IdeiasList />
       </Content>
+      <Footer />
     </>
   )
 }
