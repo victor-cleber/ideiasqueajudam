@@ -2,10 +2,11 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles'
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles({
   list: props => ({
     display: 'flex',
     flexDirection: props.isVertical ? 'column' : 'row',
+    marginBottom: 0,
     '& li': {
       listStyle: 'none',
       marginRight: 15,
@@ -16,7 +17,7 @@ const useStyles = makeStyles(theme => ({
       }
     }
   })
-}))
+})
 
 const Routes = ({ isVertical, textColor }) => {
   const props = {

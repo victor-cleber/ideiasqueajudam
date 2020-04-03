@@ -18,6 +18,9 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.up('sm')]: {
       display: 'block'
     }
+  },
+  title: {
+    color: 'white'
   }
 }))
 
@@ -30,9 +33,13 @@ const Navbar = () => {
         <Toolbar>
           <SideMenu />
           <img
+            alt='Logo'
             className={classes.logo}
             src='https://via.placeholder.com/50'/>
-          <Typography variant="h6">
+          <Typography
+            className={classes.title}
+            variant="h6"
+          >
             Ideias que ajudam
           </Typography>
           <div className={classes.routes}>
