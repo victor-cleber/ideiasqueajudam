@@ -1,4 +1,4 @@
-ps:scale web=1 --app ideasqueajudam
+ps: scale web=1 --app ideasqueajudam
 config:set DISABLE_COLLECTS=1
 
 #Procfile
