@@ -4,4 +4,4 @@ config:set DISABLE_COLLECTS=1
 #Procfile
 #web: gunicorn "ideiasqueajudamapi.ideiasqueajudam:create_app()" --log-file - 
 
-web: gunicorn ideiasqueajudam.ideiasqueajudam.wsgi
+web: gunicorn ideiasqueajudamapi.ideiasqueajudam.wsgi
