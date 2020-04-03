@@ -127,5 +127,5 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
-
+#Import esta no inicio do arquivo
 django_heroku.settings(locals())
