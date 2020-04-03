@@ -2,4 +2,4 @@ heroku ps:scale web=1 --app ideiasqueajudam
 heroku config:set DISABLE_COLLECTS
 
 #Procfile
-web: gunicorn <ideiasqueajudam>.wsgi --log-file -
+heroku web:gunicorn <ideiasqueajudam>.wsgi --log-file -
