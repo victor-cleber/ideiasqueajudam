@@ -5,28 +5,19 @@ import {
   BrowserRouter
 } from 'react-router-dom'
 import Navbar from '../navbar/navbar'
-import Home from '../home/home'
+import { headerRoutes, footerRoutes } from '../routes/routes'
 
 const App = () => {
   return (
     <BrowserRouter>
       <Navbar />
       <Switch>
-        <Route exact path='/'>
-          <Home />
-        </Route>
-        <Route path='/saude'>
-          saude
-        </Route>
-        <Route path="/educacao">
-          educação
-        </Route>
-        <Route path="/economia">
-          economia
-        </Route>
-        <Route path="/social">
-          social
-        </Route>
+        {[...headerRoutes, ...footerRoutes].map(route => {
+          const { path, name, component } = route
+          return <Route key={name} exact path={path}>
+            {component}
+          </Route>
+        })}
       </Switch>
     </BrowserRouter>
   )
