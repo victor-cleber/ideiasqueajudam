@@ -1,6 +1,8 @@
 import React from 'react'
 import Carousel from '../carousel/carousel'
 import Dropdown from '../dropdown/dropdown'
+import IdeiasList from '../ideias-list/ideias-list'
+import Content from '../containers/content'
 
 const Home = () => {
   const temporaryOptions = [
@@ -20,13 +22,16 @@ const Home = () => {
   const handleSelectedOption = value => {
     console.log(value)
   }
-
   return (
     <>
       <Carousel />
-      <Dropdown
-        options={temporaryOptions}
-        onChange={handleSelectedOption} />
+      <Content>
+        <Dropdown
+          options={temporaryOptions}
+          onChange={handleSelectedOption}
+        />
+        <IdeiasList />
+      </Content>
     </>
   )
 }
