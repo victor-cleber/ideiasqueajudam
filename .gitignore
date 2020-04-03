@@ -3,3 +3,4 @@ VENV/
 db.sqlite3
 # specific files
 *.pyc
+.idea
