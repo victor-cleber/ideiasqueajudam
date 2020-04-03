@@ -1,7 +1,7 @@
-ps: scale web=1 --app ideasqueajudam
+ps:scale web=1 --app ideasqueajudam
 config:set DISABLE_COLLECTS=1
 
 #Procfile
 #web: gunicorn "ideiasqueajudamapi.ideiasqueajudam:create_app()" --log-file - 
-
-web: gunicorn ideasqueajudam.wsgi --log-file -
+web: gunicorn "ideiasqueajudam:create_app()" --log-file -
+#web: gunicorn ideasqueajudam.wsgi --log-file -
