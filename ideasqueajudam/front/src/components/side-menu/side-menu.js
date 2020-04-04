@@ -40,8 +40,8 @@ const SideMenu = () => {
     >
       <Routes
         routes={headerRoutes}
-        textColor='black'
-        isVertical/>
+        isVertical
+      />
     </div>
   }
 

@@ -1,5 +1,6 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
+import { Tab, Tabs } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles'
 import Home from '../home/home'
 
@@ -59,34 +60,61 @@ const useStyles = makeStyles({
       marginRight: 15,
       '& a': {
         textDecoration: 'none',
-        color: props.textColor ? props.textColor : 'white',
         fontSize: 18
       }
     }
   })
 })
 
-const Routes = ({ isVertical, textColor, routes }) => {
+const Routes = ({ isVertical, textColor, routes, location: { pathname } }) => {
   const props = {
     isVertical,
     textColor
   }
   const classes = useStyles(props)
+
+  const [value, setValue] = React.useState('');
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
   return (
-    <div>
-      <nav>
-        <ul className={classes.list}>
-          {routes.map(route => {
-            const {path, name} =  route
-            return <li key={name}>
-              <NavLink
-                to={path}>{name}</NavLink>
-            </li>
-          })}
-        </ul>
-      </nav>
-    </div>
+    <Tabs 
+      orientation={isVertical ? 'vertical' : 'horizontal'}
+      value={value}
+      onChange={handleChange}
+      variant='scrollable'
+      scrollButtons='on'
+      indicatorColor='secondary'
+      textColor='secondary'
+    >
+      { routes.map(route => {
+        const { path, name } = route
+        if (pathname.startsWith(path) && value.length < path.length) {
+          setValue(path);
+        }
+        return (
+          <Tab
+            key={name}
+            label={name}
+            value={path}
+            component={Link} to={path} 
+          />
+        )})}
+    </Tabs>
+    // <div>
+    //   <nav>
+    //     <ul className={classes.list}>
+    //       {routes.map(route => {
+    //         const {path, name} =  route
+    //         return (
+    //           <Tab key={name} label={name} value={path} to={path} />)
+    //       })}
+    //     </ul>
+    //   </nav>
+    // </div>
   )
 }
 
-export default Routes
+export default withRouter(Routes)
