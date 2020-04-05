@@ -1,8 +1,9 @@
 import React from 'react'
 import { Link, withRouter } from 'react-router-dom'
-import { Tab, Tabs } from '@material-ui/core';
+import { Tab, Tabs } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 import Home from '../home/home'
+import Ideia from '../ideia/ideia'
 
 export const footerRoutes = [
   {
@@ -31,7 +32,7 @@ export const headerRoutes = [
   {
     path: '/saude',
     name: 'Saúde',
-    component: ''
+    component: <Ideia />
   },
   {
     path: '/educacao',

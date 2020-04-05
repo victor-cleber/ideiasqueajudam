@@ -43,25 +43,25 @@ const IdeaItem = () => {
         </Typography>
         <CardMedia
           className={classes.media}
-          image="https://espacofiteventos.com.br/wp-content/uploads/2018/06/Como-ter-uma-boa-ideia-profissional--1000x580.jpg"
-          title="ideia"
+          image='https://espacofiteventos.com.br/wp-content/uploads/2018/06/Como-ter-uma-boa-ideia-profissional--1000x580.jpg'
+          title='ideia'
         />
         <CardContent>
           <Typography
             gutterBottom
-            color="textSecondary"
-            className={classes.datetime}
+            color='textSecondary'
+            variant='overline'
           >
             18 de Abril, 2020
           </Typography>
-          <Typography variant="body2">
+          <Typography variant='body2'>
             Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
             across all continents except Antarctica
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="secondary">
+        <Button size='small' color='secondary'>
           Leia Mais
         </Button>
       </CardActions>
