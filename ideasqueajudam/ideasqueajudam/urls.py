@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
-from ideasqueajudam.ideias import urls as app_urls
+from ideias import urls as app_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
