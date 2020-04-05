@@ -1,4 +1,4 @@
-web: gunicorn ideasqueajudam.ideasqueajudam.wsgi --log-file -
+web: gunicorn ideasqueajudam.wsgi --log-file -
 
 ps:scale web=1 --app ideasqueajudam
 
