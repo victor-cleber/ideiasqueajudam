@@ -53,18 +53,15 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     
 ]
-MIDDLEWARE_CLASS = [
+
+MIDDLEWARE_CLASSES = (
     'corsheaders.middleware.CorsMiddleware',
-    'django.middleware.common.CommonMiddleware'
-]
+    'django.middleware.common.BrokenLinkEmailsMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    #...
+)
 
 CORS_ORIGIN_ALLOW_ALL = True
-CORS_ORIGIN_WHITELIST = ['http://ideiasqueajudam.com']
-CORS_ALLOW_HEADERS = (
-    'content-type',
-    'origin',
-    'accept',
-)
 
 ROOT_URLCONF = 'ideasqueajudam.urls'
 
