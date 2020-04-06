@@ -11,6 +11,7 @@ const Home = () => {
   useEffect(() => {
     async function fetchIdeas() {
       const ideas = await getIdeas()
+      console.log('IDEAS', ideas)
     }
 
     fetchIdeas()

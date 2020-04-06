@@ -1,5 +1,5 @@
 const env = {
-  apiDomain: 'http://api.ideiasqueajudam.com/'
+  apiDomain: 'https://api.ideiasqueajudam.com/'
 }
 
 module.exports = env
