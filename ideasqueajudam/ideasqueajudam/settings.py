@@ -58,8 +58,13 @@ MIDDLEWARE_CLASS = [
     'django.middleware.common.CommonMiddleware'
 ]
 
-CORS_ORIGIN_ALLOW_ALL = False
+CORS_ORIGIN_ALLOW_ALL = True
 CORS_ORIGIN_WHITELIST = ['http://ideiasqueajudam.com']
+CORS_ALLOW_HEADERS = (
+    'content-type',
+    'origin',
+    'accept',
+)
 
 ROOT_URLCONF = 'ideasqueajudam.urls'
 
