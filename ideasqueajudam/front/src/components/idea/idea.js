@@ -11,7 +11,7 @@ import Grid from '@material-ui/core/Grid';
 import EmojiObjectsIcon from '@material-ui/icons/EmojiObjects';
 import EmojiObjectsOutlinedIcon from '@material-ui/icons/EmojiObjectsOutlined';
 import Modal from '../modal/modal'
-import IdeaForm from './idea-form'
+import PromoteIdea from '../promote-idea/promote-idea'
 
 const useStyles = makeStyles({
   root: {
@@ -55,7 +55,7 @@ const Idea = () => {
       <Modal
         closeModal={closeModal}
         open={open}>
-          <IdeaForm />
+          <PromoteIdea />
       </Modal>
       <Grid
         container
