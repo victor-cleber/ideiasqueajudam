@@ -4,7 +4,6 @@ import TextField from '@material-ui/core/TextField'
 import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
 import Grid from '@material-ui/core/Grid'
-import Share from '../share/share'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -24,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const PromoteIdea = () => {
+const PromoteIdea = ({ onCancel }) => {
   const classes = useStyles()
 
   return (
@@ -32,11 +31,15 @@ const PromoteIdea = () => {
       <div>
         <Grid container justify='space-between'>
           <Typography variant='h5'>Promova a ideia XYZ</Typography>
-          <Share />
         </Grid>
-        <TextField  label="Seu nome" />
-        <TextField label="Seu email" />
         <TextField
+          variant='outlined'
+          label="Seu nome" />
+        <TextField
+          variant='outlined'
+          label="Seu email" />
+        <TextField
+          variant='outlined'
           rows={5}
           multiline
           label="Escreva uma mensagem para o criador ou divulgador da ideia" />
@@ -46,10 +49,12 @@ const PromoteIdea = () => {
           justify="flex-end"
           alignItems="center">
           <Grid item>
-            <Button variant="contained" color="secondary">
+            <Button
+              onClick={onCancel}
+              variant="contained" color="primary">
               Cancelar
             </Button>
-            <Button variant="contained" color="secondary">
+            <Button variant="contained" color="primary">
               Enviar
             </Button>
           </Grid>

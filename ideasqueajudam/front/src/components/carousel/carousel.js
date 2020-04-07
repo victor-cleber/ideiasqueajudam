@@ -2,20 +2,27 @@ import React from 'react'
 import { Carousel as CarouselComponent } from 'antd'
 import 'antd/dist/antd.css'
 import './styles.css'
+import img1 from './images/1.jpg'
+import img2 from './images/2.jpg'
+import img3 from './images/3.jpg'
 
 const Carousel = () => {
   return (
     <CarouselComponent autoplay autoplaySpeed={5000}>
       <div>
-        <h3>Promova uma ideia</h3>
-      </div>
-      <div>
-        <h3>Seja nosso parceiro</h3>
+        <img
+          src={img1}
+          alt='ideia'/>
       </div>
       <div>
         <img
-          src='https://espacofiteventos.com.br/wp-content/uploads/2018/06/Como-ter-uma-boa-ideia-profissional--1000x580.jpg'
-          alt='some-ideia'/>
+          src={img2}
+          alt='boa-ideia'/>
+      </div>
+      <div>
+        <img
+          src={img3}
+          alt='ideia-colaborativa'/>
       </div>
     </CarouselComponent>
   )

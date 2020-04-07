@@ -3,6 +3,10 @@ import { makeStyles } from '@material-ui/core/styles'
 import { AppBar, Toolbar, Typography } from '@material-ui/core';
 import Routes, { headerRoutes } from '../routes/routes'
 import SideMenu from '../side-menu/side-menu'
+import Button from '@material-ui/core/Button'
+import logo from './logo.png'
+import { Link } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -22,27 +26,30 @@ const useStyles = makeStyles(theme => ({
 
 const Navbar = () => {
   const classes = useStyles()
+  const history = useHistory()
 
   return (
     <div className={classes.root}>
        <AppBar position='static' className={classes.root}>
         <Toolbar>
           <SideMenu />
-          <img
-            alt='Logo'
-            className={classes.logo}
-            src='https://via.placeholder.com/50' />
-          <Typography
-            className={classes.title}
-            variant="h6"
-          >
-            Ideias que Ajudam
-          </Typography>
+          <Link to='/'>
+            <img
+              alt='Logo'
+              className={classes.logo}
+              src={logo} />
+          </Link>
           <div className={classes.routes}>
             <Routes 
               routes={headerRoutes}
             />
           </div>
+          <Button
+            onClick={() => history.push('/doe-uma-ideia')}
+            variant="outlined"
+            color="primary">
+            Doe uma ideia
+          </Button>
         </Toolbar>
       </AppBar>
     </div>

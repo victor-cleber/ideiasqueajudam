@@ -7,7 +7,9 @@ import Grid from '@material-ui/core/Grid'
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    padding: 30
+    padding: 30,
+    maxWidth: 800,
+    margin: '0 auto'
   },
   input: {
     display: 'none'

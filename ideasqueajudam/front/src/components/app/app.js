@@ -8,6 +8,7 @@ import Navbar from '../navbar/navbar'
 import { headerRoutes, footerRoutes } from '../routes/routes'
 import { MuiThemeProvider } from '@material-ui/core/styles';
 import theme from '../../theme/muiTheme';
+import SendIdea from '../send-idea/send-idea'
 
 const App = () => {
   return (
@@ -21,6 +22,9 @@ const App = () => {
               {component}
             </Route>
           })}
+          <Route path='/doe-uma-ideia'>
+            <SendIdea />
+          </Route>
         </Switch>
       </BrowserRouter>
     </MuiThemeProvider>
