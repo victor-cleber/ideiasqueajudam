@@ -1,23 +1,53 @@
 from django.db import models
-
+from django.utils import timezone
 # Create your models here.
+class Realizador(models.Model):
+    class Meta:
+        verbose_name = 'Realizador'
+        verbose_name_plural = 'Realizadores'
+
+    nome = models.CharField(null=False, blank=False, max_length=30)
+    email = models.CharField(null=False, blank=False, max_length=20)
+    criado_em = models.DateTimeField(default=timezone.now)
+    excluido_em = models.DateTimeField(null=True, blank=True)
+
+    def __str__(self):
+        return self.nome
+
+class Tema(models.Model):
+    class Meta:
+        verbose_name = 'Tema'
+        verbose_name_plural = 'Temas'
+    nome = models.CharField(null=False, blank=False, max_length=15)
+    descricao = models.CharField(null=False, blank=False, max_length=200)
+    criado_em = models.DateTimeField(default=timezone.now)
+    excluido_em = models.DateTimeField(null=True, blank=True)
+
+    def __str__(self):
+        return self.nome
 
 class Ideia(models.Model):
+    class Meta:
+        verbose_name = 'Ideia'
+        verbose_name_plural = 'Ideias'
+
     STATUS = (
         ('AN', 'Analise'),
         ('AP', 'Aprovado'),
         ('EX', 'Excluido'),
     )
-    id_ideia = models.AutoField(primary_key=True)
     titulo = models.CharField(null=False, blank=False, max_length=20)
     descricao = models.CharField(null=False, blank=False, max_length=200)
-    status = models.CharField(null=False, blank=False, max_length=2, choices=STATUS)
-    dt_exclusao = models.DateTimeField(null=True, blank=True)
-    dt_criacao = models.DateTimeField(null=False, blank=False)
+    status = models.CharField(null=False, blank=False, max_length=2, choices=STATUS)    
     link_youtube = models.CharField(null=False, blank=False, max_length=200)
     material_complementar = models.CharField(null=True, blank=True, max_length=200)
-    imagem = models.CharField(null=False, blank=False, max_length=200)
-    compartilhamentos = models.IntegerField(default=0)
+    caminho_imagem = models.CharField(null=False, blank=False, max_length=200)
+    impacto = models.IntegerField(default=0)
+    criado_em = models.DateTimeField(default=timezone.now)
+    excluido_em = models.DateTimeField(null=True, blank=True)
+    realizador = models.ForeignKey(Realizador, on_delete=models.PROTECT)
+    tema = models.ForeignKey(Tema, on_delete=models.PROTECT)
 
     def __str__(self):
         return self.titulo
+
