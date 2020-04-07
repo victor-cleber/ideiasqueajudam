@@ -61,7 +61,7 @@ const IdeaItem = () => {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size='small' color='secondary'>
+        <Button size='small' color='primary'>
           Leia Mais
         </Button>
       </CardActions>

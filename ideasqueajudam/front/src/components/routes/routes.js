@@ -3,7 +3,8 @@ import { Link, withRouter } from 'react-router-dom'
 import { Tab, Tabs } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 import Home from '../home/home'
-import Ideia from '../ideia/ideia'
+import Idea from '../idea/idea'
+import SendIdea from '../send-idea/send-idea'
 
 export const footerRoutes = [
   {
@@ -32,12 +33,12 @@ export const headerRoutes = [
   {
     path: '/saude',
     name: 'Saúde',
-    component: <Ideia />
+    component: <Idea />
   },
   {
     path: '/educacao',
     name: 'Educação',
-    component: ''
+    component: <SendIdea />
   },
   {
     path: '/economia',
@@ -87,8 +88,8 @@ const Routes = ({ isVertical, textColor, routes, location: { pathname } }) => {
       onChange={handleChange}
       variant='scrollable'
       scrollButtons='on'
-      indicatorColor='secondary'
-      textColor='secondary'
+      indicatorColor='primary'
+      textColor='primary'
     >
       { routes.map(route => {
         const { path, name } = route
