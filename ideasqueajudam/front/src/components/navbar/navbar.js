@@ -36,7 +36,7 @@ const Navbar = () => {
             className={classes.title}
             variant="h6"
           >
-            Ideias que ajudam
+            Ideias que Ajudam
           </Typography>
           <div className={classes.routes}>
             <Routes 
