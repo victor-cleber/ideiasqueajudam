@@ -3,7 +3,7 @@ import { Link, withRouter } from 'react-router-dom'
 import { Tab, Tabs } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 import Home from '../home/home'
-import Ideia from '../ideia/ideia'
+import Idea from '../idea/idea'
 
 export const footerRoutes = [
   {
@@ -32,7 +32,7 @@ export const headerRoutes = [
   {
     path: '/saude',
     name: 'Saúde',
-    component: <Ideia />
+    component: <Idea />
   },
   {
     path: '/educacao',
