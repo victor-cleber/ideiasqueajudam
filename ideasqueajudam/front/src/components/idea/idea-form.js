@@ -38,7 +38,7 @@ const IdeaForm = () => {
           label="Escreva uma mensagem para o criador da ideia" />
           <Grid
             container
-            direction="row"
+            direction='row'
             justify="flex-end"
             alignItems="center">
             <Grid item>
