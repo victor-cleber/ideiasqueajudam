@@ -39,7 +39,7 @@ const IdeaForm = () => {
         <TextField
           rows={5}
           multiline
-          label="Escreva uma mensagem para o criador da ideia" />
+          label="Escreva uma mensagem para o criador ou divulgador da ideia" />
           <Grid
             container
             direction='row'
