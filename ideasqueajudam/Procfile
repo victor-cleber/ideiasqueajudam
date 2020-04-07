@@ -3,3 +3,5 @@ web: gunicorn ideasqueajudam.wsgi --log-file -
 ps:scale web=1 --app ideasqueajudam
 
 config:set DISABLE_COLLECTS=1
+
+release: python manage.py migrate
