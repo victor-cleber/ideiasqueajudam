@@ -4,3 +4,4 @@ db.sqlite3
 # specific files
 *.pyc
 .idea
+ideas/migrations/*.py
