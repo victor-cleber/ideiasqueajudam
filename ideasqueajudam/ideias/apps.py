@@ -8,5 +8,5 @@ class TemasConfig(AppConfig):
     name = 'temas'
 
 class RealizadoresConfig(AppConfig):
-    name = 'Realizadores'
+    name = 'realizadores'
 

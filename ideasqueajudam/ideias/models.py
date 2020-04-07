@@ -2,10 +2,6 @@ from django.db import models
 from django.utils import timezone
 # Create your models here.
 class Realizador(models.Model):
-    class Meta:
-        verbose_name = 'Realizador'
-        verbose_name_plural = 'Realizadores'
-
     nome = models.CharField(null=False, blank=False, max_length=30)
     email = models.CharField(null=False, blank=False, max_length=20)
     criado_em = models.DateTimeField(default=timezone.now)
@@ -15,9 +11,6 @@ class Realizador(models.Model):
         return self.nome
 
 class Tema(models.Model):
-    class Meta:
-        verbose_name = 'Tema'
-        verbose_name_plural = 'Temas'
     nome = models.CharField(null=False, blank=False, max_length=15)
     descricao = models.CharField(null=False, blank=False, max_length=200)
     criado_em = models.DateTimeField(default=timezone.now)
@@ -27,9 +20,6 @@ class Tema(models.Model):
         return self.nome
 
 class Ideia(models.Model):
-    class Meta:
-        verbose_name = 'Ideia'
-        verbose_name_plural = 'Ideias'
 
     STATUS = (
         ('AN', 'Analise'),

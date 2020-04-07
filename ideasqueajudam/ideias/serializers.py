@@ -4,7 +4,7 @@ from .models import Ideia, Realizador, Tema
 class IdeiaSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Ideia
-        fields = ('url', 'titulo', 'descricao','criado_em', 'excluido_em', 'link_youtube', 'material_complementar', 'caminho_imagem')
+        fields = ('url', 'titulo', 'descricao','criado_em', 'excluido_em', 'link_youtube', 'material_complementar', 'caminho_imagem', 'realizador', 'tema')
     
 
 class RealizadorSerializer(serializers.HyperlinkedModelSerializer):
