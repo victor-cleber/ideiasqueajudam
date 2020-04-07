@@ -12,13 +12,12 @@ import { makeStyles } from '@material-ui/core/styles'
 const useStyles = makeStyles({
   root: {
     display: 'flex'
+  },
+  shareButton: {
+    marginRight: '5px',
+    outline: 0
   }
 })
-const shareComponentsStyles = {
-  marginRight: '5px',
-  cursor: 'pointer',
-  outline: 0
-}
 
 
 const Share = () => {
@@ -27,19 +26,25 @@ const Share = () => {
   return (
     <div className={classes.root}>
       <FacebookShareButton
-        style={shareComponentsStyles}
+        className={classes.shareButton}
         url='https://google.com'>
         <FacebookIcon size={35} round />
       </FacebookShareButton>
       <TwitterShareButton
-        style={shareComponentsStyles}
-        url='https://google.com'>
-        <TwitterIcon size={35} round iconBgStyle={{ fill: '#49A0EB' }} />
+        className={classes.shareButton}
+        url='https://google.com'
+      >
+        <TwitterIcon
+          size={35}
+          round
+          iconBgStyle={{ fill: '#49A0EB' }}
+        />
       </TwitterShareButton>
       <EmailShareButton
         openWindow
-        style={shareComponentsStyles}
-        url='https://google.com'>
+        className={classes.shareButton}
+        url='https://google.com'
+      >
         <EmailIcon
           size={35}
           round
