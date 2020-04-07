@@ -79,7 +79,7 @@ const Idea = () => {
               <CardMedia
                 className={classes.media}
                 image='https://espacofiteventos.com.br/wp-content/uploads/2018/06/Como-ter-uma-boa-ideia-profissional--1000x580.jpg'
-                title='ideia'
+                title="ideia"
               />
               <CardContent>
                 <Grid container justify='space-between'>
