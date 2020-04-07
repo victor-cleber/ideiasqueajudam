@@ -11,45 +11,41 @@ const useStyles = makeStyles((theme) => ({
       margin: theme.spacing(1),
       width: '100%'
     },
-    '& .MuiFormLabel-root.Mui-focused': {
-      color: 'rgba(0, 0, 0, .5)'
-    },
     '& .MuiButtonBase-root': {
       marginLeft: 10
     },
-    '& .MuiButton-label': {
-      color: 'white'
-    }
   },
 }))
 
-const IdeaForm = () => {
+const IdeaForm = ({ handleCancel }) => {
   const classes = useStyles()
 
   return (
-    <form className={classes.root} noValidate autoComplete="off">
+    <form noValidate className={classes.root} autoComplete="off">
       <div>
         <Typography variant='h5'>Promova a ideia XYZ</Typography>
-        <TextField  label="Seu nome" />
-        <TextField label="Seu email" />
+        <TextField variant='outlined' label="Seu nome" />
+        <TextField variant='outlined' label="Seu email" />
         <TextField
           rows={5}
           multiline
-          label="Escreva uma mensagem para o criador da ideia" />
-          <Grid
-            container
-            direction="row"
-            justify="flex-end"
-            alignItems="center">
-            <Grid item>
-              <Button variant="contained" color="secondary">
-                Cancelar
+          label="Escreva uma mensagem para o criador da ideia"
+          variant='outlined'
+        />
+        <Grid
+          container
+          direction="row"
+          justify="flex-end"
+          alignItems="center">
+          <Grid item>
+            <Button variant="contained" color="primary" onClick={handleCancel}>
+              Cancelar
               </Button>
-              <Button variant="contained" color="secondary">
-                Enviar
+            <Button variant="contained" color="primary">
+              Enviar
               </Button>
-            </Grid>
           </Grid>
+        </Grid>
       </div>
     </form>
   )

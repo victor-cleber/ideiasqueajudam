@@ -7,8 +7,8 @@ const theme = createMuiTheme({
         useNextVariants: true,
     },
     palette: {
-        primary: { main: grey[50] },
-        secondary: { main: orange[600] },
+        primary: { main: orange[600], contrastText: 'white' },
+        secondary: { main: grey[50] },
     },
     shape: {
         borderRadius: 8

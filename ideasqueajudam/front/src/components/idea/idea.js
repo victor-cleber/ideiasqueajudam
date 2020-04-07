@@ -55,7 +55,7 @@ const Idea = () => {
       <Modal
         closeModal={closeModal}
         open={open}>
-          <IdeaForm />
+          <IdeaForm handleCancel={closeModal}/>
       </Modal>
       <Grid
         container
@@ -96,11 +96,11 @@ const Idea = () => {
                       variant='overline'
                     >
                       Impacto
-                        <EmojiObjectsIcon color="secondary" />
-                        <EmojiObjectsIcon color="secondary" />
-                        <EmojiObjectsIcon color="secondary" />
-                        <EmojiObjectsOutlinedIcon color="secondary" />
-                        <EmojiObjectsOutlinedIcon color="secondary" />
+                        <EmojiObjectsIcon color="primary" />
+                        <EmojiObjectsIcon color="primary" />
+                        <EmojiObjectsIcon color="primary" />
+                        <EmojiObjectsOutlinedIcon color="primary" />
+                        <EmojiObjectsOutlinedIcon color="primary" />
                     </Typography>
                   </Grid>
                 </Grid>
@@ -115,11 +115,11 @@ const Idea = () => {
                 <Button
                   onClick={() => openModal()}
                   size='small'
-                  color='secondary'
+                  color='primary'
                 >
                   Promova essa ideia...
                 </Button>
-                <Button size='small' color='secondary'>
+                <Button size='small' color='primary'>
                   Compartilhe essa ideia...
                 </Button>
               </Grid>
