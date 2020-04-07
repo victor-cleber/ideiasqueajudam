@@ -16,6 +16,9 @@ const useStyles = makeStyles((theme) => ({
     },
     '& .MuiButtonBase-root': {
       marginLeft: 10
+    },
+    '& .MuiButton-label': {
+      color: 'white'
     }
   },
 }))
@@ -39,10 +42,10 @@ const IdeaForm = () => {
             justify="flex-end"
             alignItems="center">
             <Grid item>
-              <Button variant="contained" color="primary">
+              <Button variant="contained" color="secondary">
                 Cancelar
               </Button>
-              <Button variant="contained" color="primary">
+              <Button variant="contained" color="secondary">
                 Enviar
               </Button>
             </Grid>
