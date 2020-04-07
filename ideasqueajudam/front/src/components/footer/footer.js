@@ -12,6 +12,9 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.up('sm')]: {
       flexDirection: 'row',
       justifyContent: 'space-between'
+    },
+    '& .MuiTab-wrapper': {
+      color: 'white'
     }
   }
 }))

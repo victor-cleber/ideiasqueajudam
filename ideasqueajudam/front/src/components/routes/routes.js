@@ -4,7 +4,6 @@ import { Tab, Tabs } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 import Home from '../home/home'
 import Idea from '../idea/idea'
-import SendIdea from '../send-idea/send-idea'
 
 export const footerRoutes = [
   {
@@ -38,7 +37,7 @@ export const headerRoutes = [
   {
     path: '/educacao',
     name: 'Educação',
-    component: <SendIdea />
+    component: ''
   },
   {
     path: '/economia',

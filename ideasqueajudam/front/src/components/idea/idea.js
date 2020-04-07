@@ -12,6 +12,7 @@ import EmojiObjectsIcon from '@material-ui/icons/EmojiObjects';
 import EmojiObjectsOutlinedIcon from '@material-ui/icons/EmojiObjectsOutlined';
 import Modal from '../modal/modal'
 import PromoteIdea from '../promote-idea/promote-idea'
+import Share from '../share/share'
 
 const useStyles = makeStyles({
   root: {
@@ -55,7 +56,9 @@ const Idea = () => {
       <Modal
         closeModal={closeModal}
         open={open}>
-          <PromoteIdea />
+          <PromoteIdea
+            onCancel={closeModal}
+          />
       </Modal>
       <Grid
         container
@@ -119,9 +122,7 @@ const Idea = () => {
                 >
                   Promova essa ideia...
                 </Button>
-                <Button size='small' color='primary'>
-                  Compartilhe essa ideia...
-                </Button>
+                <Share />
               </Grid>
             </CardActions>
           </Card>
