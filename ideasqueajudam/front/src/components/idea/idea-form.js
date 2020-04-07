@@ -4,6 +4,7 @@ import TextField from '@material-ui/core/TextField'
 import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
 import Grid from '@material-ui/core/Grid'
+import Share from '../share/share'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -29,7 +30,10 @@ const IdeaForm = () => {
   return (
     <form className={classes.root} noValidate autoComplete="off">
       <div>
-        <Typography variant='h5'>Promova a ideia XYZ</Typography>
+        <Grid container justify='space-between'>
+          <Typography variant='h5'>Promova a ideia XYZ</Typography>
+          <Share />
+        </Grid>
         <TextField  label="Seu nome" />
         <TextField label="Seu email" />
         <TextField
