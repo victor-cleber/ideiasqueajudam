@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import ModalComponent from '@material-ui/core/Modal';
-import Backdrop from '@material-ui/core/Backdrop';
-import Fade from '@material-ui/core/Fade';
+import React, { useState } from 'react'
+import { makeStyles } from '@material-ui/core/styles'
+import ModalComponent from '@material-ui/core/Modal'
+import Backdrop from '@material-ui/core/Backdrop'
+import Fade from '@material-ui/core/Fade'
 
 const useStyles = makeStyles(theme => ({
   modal: {
@@ -24,8 +24,8 @@ const Modal = ({ children, open, closeModal }) => {
   return (
     <div>
       <ModalComponent
-        aria-labelledby="transition-modal-title"
-        aria-describedby="transition-modal-description"
+        aria-labelledby='transition-modal-title'
+        aria-describedby='transition-modal-description'
         className={classes.modal}
         open={open}
         onClose={() => closeModal()}
