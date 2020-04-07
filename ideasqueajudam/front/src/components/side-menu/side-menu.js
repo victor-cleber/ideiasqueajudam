@@ -51,7 +51,6 @@ const SideMenu = () => {
         onClick={toggleSideMenu(true)}
         edge="start"
         className={classes.menuButton}
-        color="inherit"
         aria-label="menu">
         <MenuIcon />
       </IconButton>

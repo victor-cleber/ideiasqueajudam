@@ -44,6 +44,7 @@ const SendIdea = ({ handleCancel }) => {
             fullWidth
             label="Email de contato"
             variant='outlined'
+            type='email'
           />
         </Grid>
         <Grid item xs={12}>
@@ -92,21 +93,18 @@ const SendIdea = ({ handleCancel }) => {
           container
           item
           justify="flex-end"
-          // alignItems="center"
           spacing={2}
         >
           <Grid item>
             <Button variant="contained" color="primary" onClick={handleCancel}>
               Cancelar
-              </Button>
+            </Button>
           </Grid>
           <Grid item>
             <Button variant="contained" color="primary">
               Enviar
-              </Button>
+            </Button>
           </Grid>
-
-
         </Grid>
       </Grid>
     </form>

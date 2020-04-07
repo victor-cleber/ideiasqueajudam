@@ -10,7 +10,8 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: theme.palette.background.paper,
   },
   logo: {
-    marginRight: 10
+    marginRight: 10,
+    width: 200,
   },
   routes: {
     display: 'none',
@@ -31,12 +32,12 @@ const Navbar = () => {
           <img
             alt='Logo'
             className={classes.logo}
-            src='https://via.placeholder.com/50' />
+            src={"/images/logo.jpeg"} />
           <Typography
             className={classes.title}
             variant="h6"
           >
-            Ideias que Ajudam
+            {/* Ideias que Ajudam */}
           </Typography>
           <div className={classes.routes}>
             <Routes 
