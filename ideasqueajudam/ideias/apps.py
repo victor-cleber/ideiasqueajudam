@@ -2,11 +2,11 @@ from django.apps import AppConfig
 
 
 class IdeiasConfig(AppConfig):
-    name = 'ideias'
+    name = 'ideia'
 
 class TemasConfig(AppConfig):
-    name = 'temas'
+    name = 'tema'
 
 class RealizadoresConfig(AppConfig):
-    name = 'realizadores'
+    name = 'realizador'
 
