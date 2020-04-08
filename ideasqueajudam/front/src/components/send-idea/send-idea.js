@@ -7,7 +7,9 @@ import Grid from '@material-ui/core/Grid'
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    padding: 30
+    padding: 30,
+    maxWidth: 800,
+    margin: '0 auto'
   },
   input: {
     display: 'none'
@@ -44,6 +46,7 @@ const SendIdea = ({ handleCancel }) => {
             fullWidth
             label="Email de contato"
             variant='outlined'
+            type='email'
           />
         </Grid>
         <Grid item xs={12}>
@@ -92,21 +95,18 @@ const SendIdea = ({ handleCancel }) => {
           container
           item
           justify="flex-end"
-          // alignItems="center"
           spacing={2}
         >
           <Grid item>
             <Button variant="contained" color="primary" onClick={handleCancel}>
               Cancelar
-              </Button>
+            </Button>
           </Grid>
           <Grid item>
             <Button variant="contained" color="primary">
               Enviar
-              </Button>
+            </Button>
           </Grid>
-
-
         </Grid>
       </Grid>
     </form>

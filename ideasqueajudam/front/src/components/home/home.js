@@ -15,7 +15,6 @@ const Home = () => {
     }
 
     fetchIdeas()
-    console.log('entrou')
   }, [])
   const temporaryOptions = [
     {
