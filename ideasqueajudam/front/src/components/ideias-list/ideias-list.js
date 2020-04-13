@@ -1,43 +1,36 @@
 import React from 'react'
-import { makeStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid'
+import { makeStyles } from '@material-ui/core/styles'
 import IdeaItem from './ideia-item'
 
 const useStyles = makeStyles(theme => ({
-  containerItem: {
-    display: 'flex',
-    justifyContent: 'center',
-    marginBottom: 15,
+  root: {
+    display: 'grid',
+    gridTemplateColumns: '1fr',
+    gap: '15px',
+    [theme.breakpoints.up('sm')]: {
+      gridTemplateColumns: '1fr 1fr',
+      gap: '15px 30px',
+    },
     [theme.breakpoints.up('md')]: {
-      maxWidth: 320
+      gridTemplateColumns: '1fr 1fr 1fr',
+      gap: '15px 30px',
     }
-  }
+  },
 }))
 
-const IdeiasList = () => {
+const IdeiasList = ({ ideas }) => {
   const classes = useStyles()
 
-  const Row = () => {
-    return (
-      <>
-        <Grid className={classes.containerItem} item xs={12} sm={6} md={4}>
-          <IdeaItem />
-        </Grid>
-        <Grid className={classes.containerItem} item xs={12} sm={6} md={4}>
-          <IdeaItem />
-        </Grid>
-        <Grid className={classes.containerItem} item xs={12} sm={6} md={4}>
-          <IdeaItem />
-        </Grid>
-      </>
+  const renderContent = () => {
+    return ideas.map(idea =>
+      <IdeaItem idea={idea} />
     )
   }
+
   return (
-    <Grid container justify='space-between' spacing={3}>
-      <Row />
-      <Row />
-      <Row />
-    </Grid>
+    <div className={classes.root}>
+      { renderContent() }
+    </div>
   )
 }
 

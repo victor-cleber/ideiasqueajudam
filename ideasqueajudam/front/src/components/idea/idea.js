@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -10,9 +10,13 @@ import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import EmojiObjectsIcon from '@material-ui/icons/EmojiObjects';
 import EmojiObjectsOutlinedIcon from '@material-ui/icons/EmojiObjectsOutlined';
+import { useParams } from "react-router-dom";
 import Modal from '../modal/modal'
 import PromoteIdea from '../promote-idea/promote-idea'
 import Share from '../share/share'
+import { getIdea } from '../../services/idea/get'
+import { promoteIdeia } from '../../services/promote/post'
+import { formatDateTime } from '../../utils/formatDateTime'
 
 const useStyles = makeStyles({
   root: {
@@ -39,25 +43,35 @@ const useStyles = makeStyles({
   }
 })
 
-
 const Idea = () => {
   const [open, setOpen] = useState(false)
+  const [dataIdea, setDataIdea] = useState({})
+  const { titulo, criado_em, descricao, url, caminho_imagem } = dataIdea
+  const { id } = useParams()
   const classes = useStyles()
 
-  const openModal = () => {
-    setOpen(true)
-  }
-  const closeModal = () => {
+  useEffect(() => {
+    async function fetchIdea() {
+      const response = await getIdea(id)
+      response && setDataIdea(response.data)
+    }
+
+    fetchIdea()
+  }, [])
+
+  const sendIdea = async data => {
+    // await promoteIdeia(payload)
     setOpen(false)
   }
 
   return (
     <>
       <Modal
-        closeModal={closeModal}
+        closeModal={() => setOpen(false)}
         open={open}>
           <PromoteIdea
-            onCancel={closeModal}
+            onCancel={() => setOpen(false)}
+            onSend={sendIdea}
           />
       </Modal>
       <Grid
@@ -68,7 +82,7 @@ const Idea = () => {
         className={classes.root}
       >
         <Grid container item xs={12} md={11} alignItems='flex-start'>
-          <Typography variant='h3'>Nome da Ideia (Tipo)</Typography>
+          <Typography variant='h3'>{titulo}</Typography>
         </Grid>
         <Grid item xs={12} md={11} className={classes.card}>
           <Card>
@@ -89,7 +103,7 @@ const Idea = () => {
                       color='textSecondary'
                       variant='overline'
                     >
-                      18 de Abril, 2020
+                      {formatDateTime(criado_em)}
                     </Typography>
                   </Grid>
                   <Grid item>
@@ -108,15 +122,14 @@ const Idea = () => {
                   </Grid>
                 </Grid>
                 <Typography variant='body2'>
-                  Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                  across all continents except Antarctica
+                  {descricao}
                 </Typography>
               </CardContent>
             </CardActionArea>
             <CardActions>
               <Grid container justify='space-between'>
                 <Button
-                  onClick={() => openModal()}
+                  onClick={() => setOpen(true)}
                   size='small'
                   color='primary'
                 >

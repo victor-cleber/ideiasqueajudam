@@ -5,43 +5,49 @@ import IdeiasList from '../ideias-list/ideias-list'
 import Content from '../containers/content'
 import Footer from '../footer/footer'
 import { getIdeas } from '../../services/ideas/get'
+import { getCategories } from '../../services/categories/get'
+import Grid from '@material-ui/core/Grid'
 
 const Home = () => {
   const [ideas, setIdeas] = useState([])
+  const [categories, setCategories] = useState([])
   useEffect(() => {
     async function fetchIdeas() {
-      const ideas = await getIdeas()
-      console.log('IDEAS', ideas)
+      const response = await getIdeas()
+      setIdeas(response.data)
+    }
+    async function fetchCategories() {
+      const response = await getCategories()
+      setCategories(response.data)
     }
 
     fetchIdeas()
+    fetchCategories()
   }, [])
-  const temporaryOptions = [
-    {
-      id: 'jack',
-      value: 'Jack'
-    },
-    {
-      id: 'mary',
-      value: 'Mary'
-    },
-    {
-      id: 'john',
-      value: 'John'
-    }
-  ]
-  const handleSelectedOption = value => {
+
+  const handleSelectedCategory = value => {
     console.log(value)
   }
+
   return (
     <>
       <Carousel />
       <Content>
-        <Dropdown
-          options={temporaryOptions}
-          onChange={handleSelectedOption}
-        />
-        <IdeiasList />
+        <Grid
+          spacing={3}
+          container
+          direction='column'
+        >
+          <Grid item xs={12}>
+            <Dropdown
+              options={categories}
+              onChange={handleSelectedCategory}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <IdeiasList ideas={ideas} />
+          </Grid>
+        </Grid>
       </Content>
       <Footer />
     </>

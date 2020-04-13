@@ -1,30 +1,41 @@
-import React from 'react'
-import { Select } from 'antd'
-import 'antd/dist/antd.css'
+import React, { useState } from 'react'
+import Select from '@material-ui/core/Select'
 import { makeStyles } from '@material-ui/core/styles'
-const { Option } = Select
+import FormControl from '@material-ui/core/FormControl'
+import InputLabel from '@material-ui/core/InputLabel'
+import MenuItem from '@material-ui/core/MenuItem'
 
 const useStyles = makeStyles({
-  select: {
-    width: 150
+  category: {
+    width: 200
   }
 })
 
 const Dropdown = ({ onChange, options }) => {
+  const [selectedCategory, setSelectedCategory] = useState('')
   const classes = useStyles()
 
+  const handleOnChange = value => {
+    setSelectedCategory(value)
+    onChange(value)
+  }
+
   return (
-    <>
+    <FormControl variant="outlined" className={classes.category}>
+      <InputLabel id="demo-simple-select-outlined-label">Categorias</InputLabel>
       <Select
-        className={classes.select}
-        defaultValue='Selecione'
-        onChange={value => onChange(value)}>
+        labelId="demo-simple-select-outlined-label"
+        id="demo-simple-select-outlined"
+        value={selectedCategory}
+        onChange={event => handleOnChange(event.target.value)}
+        label="Categoria"
+      >
         {options.map(option => {
-          const {id, value } = option
-          return <Option key={id} value={id}>{value}</Option>
+          const { id, nome } = option
+          return <MenuItem key={id} value={id}>{nome}</MenuItem>
         })}
       </Select>
-    </>
+    </FormControl>
   )}
 
 export default Dropdown
