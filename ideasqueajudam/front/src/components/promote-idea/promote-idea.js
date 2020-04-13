@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import TextField from '@material-ui/core/TextField'
 import Typography from '@material-ui/core/Typography'
@@ -23,8 +23,20 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const PromoteIdea = ({ onCancel }) => {
+const PromoteIdea = ({ onCancel, onSend }) => {
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [message, setMessage] = useState('')
   const classes = useStyles()
+
+  const handleSend = () => {
+    const data = {
+      name,
+      email,
+      message
+    }
+    onSend(data)
+  }
 
   return (
     <form className={classes.root} noValidate autoComplete="off">
@@ -33,12 +45,18 @@ const PromoteIdea = ({ onCancel }) => {
           <Typography variant='h5'>Promova a ideia XYZ</Typography>
         </Grid>
         <TextField
+          value={name}
+          onChange={event => setName(event.target.value)}
           variant='outlined'
           label="Seu nome" />
         <TextField
+          value={email}
+          onChange={event => setEmail(event.target.value)}
           variant='outlined'
           label="Seu email" />
         <TextField
+          value={message}
+          onChange={event => setMessage(event.target.value)}
           variant='outlined'
           rows={5}
           multiline
@@ -54,7 +72,10 @@ const PromoteIdea = ({ onCancel }) => {
               variant="contained" color="primary">
               Cancelar
             </Button>
-            <Button variant="contained" color="primary">
+            <Button
+              onClick={handleSend}
+              variant="contained"
+              color="primary">
               Enviar
             </Button>
           </Grid>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -7,6 +8,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import { formatDateTime } from '../../utils/formatDateTime'
 
 const useStyles = makeStyles({
   container: {
@@ -32,8 +34,10 @@ const useStyles = makeStyles({
 })
 
 
-const IdeaItem = () => {
+const IdeaItem = ({ idea }) => {
   const classes = useStyles();
+  const history = useHistory()
+  const { id, url, caminho_imagem, criado_em, descricao, titulo } = idea
 
   return (
     <Card className={classes.container}>
@@ -52,16 +56,15 @@ const IdeaItem = () => {
             color='textSecondary'
             variant='overline'
           >
-            18 de Abril, 2020
+            {formatDateTime(criado_em)}
           </Typography>
           <Typography variant='body2'>
-            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-            across all continents except Antarctica
+            {descricao}
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size='small' color='primary'>
+        <Button onClick={() => history.push(`/ideia/${id}`) } size='small' color='primary'>
           Leia Mais
         </Button>
       </CardActions>

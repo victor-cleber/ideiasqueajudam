@@ -1,8 +1,8 @@
 import axios from '../axios'
 
-export async function saveIdea(payload) {
+export async function getCategories() {
   try {
-    const response = await axios.post('/ideias/', payload)
+    const response = await axios.get('/temas/')
     return response
   } catch (error) {
     console.error(error)

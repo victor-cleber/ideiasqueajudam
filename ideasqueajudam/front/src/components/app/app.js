@@ -9,6 +9,7 @@ import { headerRoutes, footerRoutes } from '../routes/routes'
 import { MuiThemeProvider } from '@material-ui/core/styles';
 import theme from '../../theme/muiTheme';
 import SendIdea from '../send-idea/send-idea'
+import Idea from '../idea/idea'
 
 const App = () => {
   return (
@@ -24,6 +25,9 @@ const App = () => {
           })}
           <Route path='/doe-uma-ideia'>
             <SendIdea />
+          </Route>
+          <Route path='/ideia/:id'>
+            <Idea />
           </Route>
         </Switch>
       </BrowserRouter>

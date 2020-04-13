@@ -3,7 +3,6 @@ import { Link, withRouter } from 'react-router-dom'
 import { Tab, Tabs } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 import Home from '../home/home'
-import Idea from '../idea/idea'
 
 export const footerRoutes = [
   {
@@ -32,7 +31,7 @@ export const headerRoutes = [
   {
     path: '/saude',
     name: 'Saúde',
-    component: <Idea />
+    component: ''
   },
   {
     path: '/educacao',
@@ -72,7 +71,7 @@ const Routes = ({ isVertical, textColor, routes, location: { pathname } }) => {
     isVertical,
     textColor
   }
-  const classes = useStyles(props)
+  // const classes = useStyles(props)
 
   const [value, setValue] = React.useState('');
 
