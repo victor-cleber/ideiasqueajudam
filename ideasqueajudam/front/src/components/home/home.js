@@ -14,10 +14,12 @@ const Home = () => {
   useEffect(() => {
     async function fetchIdeas() {
       const response = await getIdeas()
+      console.log('getIdeas', response)
       setIdeas(response.data)
     }
     async function fetchCategories() {
       const response = await getCategories()
+      console.log('getCategories', response)
       setCategories(response.data)
     }
 

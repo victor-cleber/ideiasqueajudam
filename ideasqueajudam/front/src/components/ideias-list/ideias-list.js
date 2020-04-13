@@ -19,12 +19,17 @@ const useStyles = makeStyles(theme => ({
 }))
 
 const IdeiasList = ({ ideas }) => {
+  console.log('ideas', ideas)
   const classes = useStyles()
 
   const renderContent = () => {
-    return ideas.map(idea =>
-      <IdeaItem key={idea.url} idea={idea} />
-    )
+    console.log('ideas dentro de renderContent', ideas)
+
+    if (ideas.length > 0) {
+      return ideas.map(idea =>
+        <IdeaItem key={idea.url} idea={idea}/>
+      )
+    }
   }
 
   return (

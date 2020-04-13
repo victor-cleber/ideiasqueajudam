@@ -12,6 +12,7 @@ const useStyles = makeStyles({
 })
 
 const Dropdown = ({ onChange, options }) => {
+  console.log('options', options)
   const [selectedCategory, setSelectedCategory] = useState('')
   const classes = useStyles()
 
