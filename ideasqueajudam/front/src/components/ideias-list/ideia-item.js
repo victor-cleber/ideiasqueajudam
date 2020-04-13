@@ -64,7 +64,10 @@ const IdeaItem = ({ idea }) => {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button onClick={() => history.push(`/ideia/${id}`) } size='small' color='primary'>
+        {/*<Button onClick={() => history.push(`/ideia/${id}`) } size='small' color='primary'>*/}
+        {/*  Leia Mais*/}
+        {/*</Button>*/}
+        <Button size='small' color='primary'>
           Leia Mais
         </Button>
       </CardActions>

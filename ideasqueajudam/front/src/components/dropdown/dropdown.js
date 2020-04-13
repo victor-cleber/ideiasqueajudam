@@ -31,8 +31,8 @@ const Dropdown = ({ onChange, options }) => {
         label="Categoria"
       >
         {options.map(option => {
-          const { id, nome } = option
-          return <MenuItem key={id} value={id}>{nome}</MenuItem>
+          const { id, nome, url } = option
+          return <MenuItem key={url} value={url}>{nome}</MenuItem>
         })}
       </Select>
     </FormControl>
