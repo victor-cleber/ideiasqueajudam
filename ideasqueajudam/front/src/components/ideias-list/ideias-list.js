@@ -23,7 +23,7 @@ const IdeiasList = ({ ideas }) => {
 
   const renderContent = () => {
     return ideas.map(idea =>
-      <IdeaItem idea={idea} />
+      <IdeaItem key={idea.id} idea={idea} />
     )
   }
 

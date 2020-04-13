@@ -39,13 +39,14 @@ const Home = () => {
           direction='column'
         >
           <Grid item xs={12}>
+            {categories.length > 0 &&
             <Dropdown
               options={categories}
               onChange={handleSelectedCategory}
-            />
+            />}
           </Grid>
           <Grid item xs={12}>
-            <IdeiasList ideas={ideas} />
+            {ideas.length > 0 && <IdeiasList ideas={ideas} />}
           </Grid>
         </Grid>
       </Content>
