@@ -22,11 +22,9 @@ const IdeiasList = ({ ideas }) => {
   const classes = useStyles()
 
   const renderContent = () => {
-    if (ideas.length > 0) {
-      return ideas.map(idea =>
-        <IdeaItem key={idea.url} idea={idea} />
-      )
-    }
+    return ideas.map(idea =>
+      <IdeaItem key={idea.id} idea={idea} />
+    )
   }
 
   return (
