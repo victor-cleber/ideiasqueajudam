@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework', 
+    'rest_framework',
     'ideias',
     'corsheaders'
 ]
@@ -105,8 +105,6 @@ DATABASES = {
 '''
 
 
-
-
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
@@ -150,5 +148,5 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
-#Import esta no inicio do arquivo
+# Import esta no inicio do arquivo
 django_heroku.settings(locals())

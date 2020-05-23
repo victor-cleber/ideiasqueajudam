@@ -10,5 +10,4 @@ router.register('temas', views.TemaView)
 
 urlpatterns = [
     path('', include(router.urls))
-   
 ]
